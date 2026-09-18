@@ -1,134 +1,423 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#7b2cbf">
-<title>DiseñaYa - Diseños personalizados</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7c3aed">
+<meta name="description" content="DiseñaYa - diseños personalizados por WhatsApp.">
+
+<title>DiseñaYa | Diseños personalizados</title>
 
 <style>
-*{box-sizing:border-box}
+:root{
+  --purple:#7c3aed;
+  --purple2:#a855f7;
+  --pink:#ec4899;
+  --dark:#211b2d;
+  --muted:#6b6475;
+  --bg:#faf7ff;
+  --line:#eee7f7;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#faf7ff;
-  color:#24152f;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--dark);
 }
 
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+
 header{
-  padding:30px 20px;
-  text-align:center;
-  color:white;
-  background:linear-gradient(135deg,#7b2cbf,#c77dff);
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  max-width:1050px;
+  margin:auto;
+  padding:13px 18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .logo{
-  font-size:34px;
-  font-weight:bold;
+  display:flex;
+  gap:9px;
+  align-items:center;
+  font-weight:900;
+  font-size:1.25rem;
+  color:var(--purple);
 }
 
-.tag{
-  margin-top:8px;
-}
-
-main{
-  max-width:720px;
-  margin:auto;
-  padding:20px;
-}
-
-.card{
-  background:white;
-  padding:20px;
-  margin:16px 0;
-  border-radius:20px;
-  box-shadow:0 7px 25px #00000012;
-}
-
-h2{
-  margin-top:0;
-}
-
-.services{
+.logo-mark{
+  width:38px;
+  height:38px;
+  border-radius:13px;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
   display:grid;
-  grid-template-columns:1fr 1fr;
+  place-items:center;
+  color:white;
+}
+
+.navlinks{
+  display:flex;
+  gap:18px;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+/* HERO */
+
+.hero{
+  max-width:1050px;
+  margin:auto;
+  padding:55px 18px 30px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  background:#f0e7ff;
+  color:#6d28d9;
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.82rem;
+}
+
+h1{
+  font-size:clamp(2.4rem,7vw,4.4rem);
+  line-height:.98;
+  margin:16px 0;
+  letter-spacing:-2px;
+}
+
+.gradient{
+  background:linear-gradient(90deg,var(--purple),var(--pink));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  font-size:1.08rem;
+  line-height:1.65;
+  color:var(--muted);
+}
+
+.actions{
+  display:flex;
+  flex-wrap:wrap;
   gap:12px;
+  margin-top:22px;
 }
 
-.service{
-  padding:18px;
-  border:1px solid #eadcf4;
-  border-radius:16px;
-  background:white;
-  cursor:pointer;
-}
-
-.service:hover{
-  border-color:#7b2cbf;
-}
-
-.price{
-  margin-top:7px;
-  color:#7b2cbf;
-  font-weight:bold;
-}
-
-input,textarea{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:1px solid #ddd;
-  border-radius:12px;
-  font-size:16px;
-}
-
-button{
-  width:100%;
-  padding:15px;
-  margin-top:10px;
+.btn{
   border:0;
-  border-radius:14px;
-  font-size:16px;
-  font-weight:bold;
+  border-radius:15px;
+  padding:13px 18px;
+  font-weight:800;
+  font-size:.98rem;
   cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
 }
 
 .primary{
-  background:#7b2cbf;
+  background:linear-gradient(135deg,var(--purple),var(--pink));
   color:white;
+  box-shadow:0 10px 25px #7c3aed33;
 }
 
-.yape{
-  background:#6f168f;
-  color:white;
+.secondary{
+  background:white;
+  color:var(--purple);
+  border:1px solid #ddd0f5;
 }
 
-.hidden{
-  display:none;
+.hero-card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:26px;
+  box-shadow:0 20px 50px #4c1d9512;
 }
 
-.note{
-  color:#66586d;
+.mascot{
+  text-align:center;
+  font-size:88px;
+  padding:10px;
+}
+
+.mini-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.mini{
+  background:#faf8ff;
+  border:1px solid var(--line);
+  padding:13px;
+  border-radius:16px;
+  text-align:center;
+  font-weight:750;
+}
+
+/* SECCIONES */
+
+section{
+  max-width:1050px;
+  margin:auto;
+  padding:48px 18px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2rem;
+  margin:0 0 9px;
+}
+
+.section-sub{
+  text-align:center;
+  color:var(--muted);
+  margin:0 auto 28px;
+  max-width:650px;
+  line-height:1.55;
+}
+
+/* SERVICIOS */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.service{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:20px;
+  transition:.2s;
+}
+
+.service:hover{
+  transform:translateY(-4px);
+}
+
+.icon{
+  font-size:34px;
+}
+
+.service p{
+  color:var(--muted);
   line-height:1.5;
 }
 
-.yape-box{
-  background:#f6eaff;
-  padding:18px;
-  border-radius:15px;
+/* PASOS */
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.step{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:20px;
+}
+
+.num{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#eee5ff;
+  color:var(--purple);
+  display:grid;
+  place-items:center;
+  font-weight:900;
+}
+
+.step p{
+  color:var(--muted);
+  line-height:1.5;
+}
+
+/* PEDIDO */
+
+.order{
+  background:linear-gradient(135deg,#24152f,#5b21b6);
+  color:white;
+  border-radius:30px;
+  padding:28px;
+  box-shadow:0 20px 50px #4c1d9530;
+}
+
+.order h2{
+  font-size:2rem;
+}
+
+.form{
+  display:grid;
+  gap:12px;
+}
+
+label{
+  font-weight:750;
+  font-size:.9rem;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  border:1px solid #ddd5e8;
+  border-radius:14px;
+  padding:13px 14px;
+  font:inherit;
+  background:white;
+  color:#261c31;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.order .primary{
+  background:white;
+  color:#6d28d9;
+  box-shadow:none;
+}
+
+/* YAPE */
+
+.payment{
+  margin-top:18px;
+  background:white;
+  color:var(--dark);
+  border-radius:20px;
+  padding:20px;
+  display:none;
+}
+
+.payment.show{
+  display:block;
+}
+
+.paybox{
+  background:#f7f2ff;
+  border:1px solid #e7daf9;
+  border-radius:16px;
+  padding:15px;
+  margin:12px 0;
+}
+
+.pay-number{
+  font-size:1.35rem;
+  font-weight:900;
+  color:#6d28d9;
+  letter-spacing:1px;
+}
+
+.notice{
+  font-size:.85rem;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top:45px;
+  background:#211b2d;
+  color:#ddd;
+  padding:30px 18px;
   text-align:center;
 }
 
-.yape-number{
-  font-size:25px;
-  font-weight:bold;
-  color:#7b2cbf;
-  margin:10px 0;
+/* AVISO */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:20px;
+  transform:translate(-50%,20px);
+  background:#211b2d;
+  color:white;
+  padding:12px 16px;
+  border-radius:13px;
+  opacity:0;
+  transition:.25s;
+  z-index:50;
 }
 
-.steps{
-  line-height:1.8;
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* CELULAR */
+
+@media(max-width:800px){
+
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .navlinks{
+    display:none;
+  }
+}
+
+@media(max-width:470px){
+
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    letter-spacing:-1px;
+  }
+
+  .actions .btn{
+    width:100%;
+  }
 }
 </style>
 </head>
@@ -136,214 +425,521 @@ button{
 <body>
 
 <header>
-  <div class="logo">✨ DiseñaYa</div>
-  <div class="tag">Diseños personalizados hechos para ti</div>
+
+<nav class="nav">
+
+<a class="logo" href="#inicio">
+<span class="logo-mark">✦</span>
+DiseñaYa
+</a>
+
+<div class="navlinks">
+<a href="#servicios">Servicios</a>
+<a href="#como">Cómo funciona</a>
+<a href="#pedido">Pedir diseño</a>
+</div>
+
+</nav>
+
 </header>
+
 
 <main>
 
-<section class="card">
-<h2>🎨 ¿Qué necesitas?</h2>
+<!-- INICIO -->
+
+<section class="hero" id="inicio">
+
+<div>
+
+<span class="badge">
+✨ Diseños hechos para ti
+</span>
+
+<h1>
+Tu idea.<br>
+<span class="gradient">
+Nuestro diseño.
+</span>
+</h1>
+
+<p>
+Convierte tus ideas en diseños digitales bonitos y personalizados.
+Cuéntanos qué necesitas y coordinamos contigo por WhatsApp.
+</p>
+
+<div class="actions">
+
+<a class="btn primary" href="#pedido">
+🎨 Quiero un diseño
+</a>
+
+<a class="btn secondary" href="#servicios">
+Ver servicios
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="mascot">
+🎨✨
+</div>
+
+<h3 style="text-align:center">
+DiseñaYa
+</h3>
+
+<p style="text-align:center;color:#6b6475">
+Creatividad personalizada
+</p>
+
+<div class="mini-grid">
+
+<div class="mini">
+💌 Invitaciones
+</div>
+
+<div class="mini">
+📱 Redes
+</div>
+
+<div class="mini">
+🖼️ Fotos
+</div>
+
+<div class="mini">
+💜 Personalizados
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICIOS -->
+
+<section id="servicios">
+
+<h2 class="section-title">
+¿Qué podemos diseñar?
+</h2>
+
+<p class="section-sub">
+Elige una categoría o explícanos tu idea.
+</p>
 
 <div class="services">
 
-<div class="service"
-onclick="seleccionar('Diseño para redes sociales','Desde S/ 15')">
-<b>📱 Diseño para redes</b>
-<div class="price">Desde S/ 15</div>
+<article class="service">
+
+<div class="icon">
+📱
 </div>
 
-<div class="service"
-onclick="seleccionar('Invitación digital','Desde S/ 12')">
-<b>💌 Invitación digital</b>
-<div class="price">Desde S/ 12</div>
+<h3>
+Redes sociales
+</h3>
+
+<p>
+Posts, historias, portadas y piezas para tus redes.
+</p>
+
+</article>
+
+
+<article class="service">
+
+<div class="icon">
+💌
 </div>
 
-<div class="service"
-onclick="seleccionar('Edición de foto','Desde S/ 10')">
-<b>🖼️ Edición de foto</b>
-<div class="price">Desde S/ 10</div>
+<h3>
+Invitaciones
+</h3>
+
+<p>
+Invitaciones digitales para celebraciones y eventos.
+</p>
+
+</article>
+
+
+<article class="service">
+
+<div class="icon">
+🖼️
 </div>
 
-<div class="service"
-onclick="seleccionar('Diseño personalizado','Desde S/ 15')">
-<b>🎨 Otro diseño</b>
-<div class="price">Desde S/ 15</div>
+<h3>
+Edición de fotos
+</h3>
+
+<p>
+Ediciones y composiciones según el estilo que quieras.
+</p>
+
+</article>
+
+
+<article class="service">
+
+<div class="icon">
+✨
 </div>
 
+<h3>
+Diseño personalizado
+</h3>
+
+<p>
+Si tienes otra idea, cuéntanosla y la coordinamos.
+</p>
+
+</article>
+
 </div>
+
 </section>
 
 
-<section class="card hidden" id="pedido">
+<!-- COMO FUNCIONA -->
 
-<h2>📝 Cuéntame tu idea</h2>
+<section id="como">
 
-<p id="servicio"></p>
+<h2 class="section-title">
+¿Cómo funciona?
+</h2>
+
+<p class="section-sub">
+Un proceso sencillo para explicar tu idea y coordinar tu pedido.
+</p>
+
+<div class="steps">
+
+<article class="step">
+
+<div class="num">
+1
+</div>
+
+<h3>
+Cuéntanos tu idea
+</h3>
+
+<p>
+Completa el formulario con tus datos y lo que necesitas.
+</p>
+
+</article>
+
+
+<article class="step">
+
+<div class="num">
+2
+</div>
+
+<h3>
+Hablamos por WhatsApp
+</h3>
+
+<p>
+Conversamos y definimos los detalles del diseño.
+</p>
+
+</article>
+
+
+<article class="step">
+
+<div class="num">
+3
+</div>
+
+<h3>
+Coordinamos el pago
+</h3>
+
+<p>
+Cuando confirmemos el pedido, recibirás las indicaciones para pagar por Yape.
+</p>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- PEDIDO -->
+
+<section id="pedido">
+
+<div class="order">
+
+<h2>
+🎨 Haz tu pedido
+</h2>
+
+<p>
+Completa los datos y toca el botón para abrir WhatsApp con tu solicitud preparada.
+</p>
+
+
+<form class="form" id="orderForm">
+
+
+<div>
+
+<label for="name">
+Tu nombre
+</label>
 
 <input
-id="nombre"
-placeholder="Tu nombre">
+id="name"
+required
+placeholder="Ej.: María"
+>
+
+</div>
+
+
+<div>
+
+<label for="service">
+¿Qué necesitas?
+</label>
+
+<select id="service" required>
+
+<option value="">
+Selecciona un servicio
+</option>
+
+<option>
+Diseño para redes sociales
+</option>
+
+<option>
+Invitación digital
+</option>
+
+<option>
+Edición de foto
+</option>
+
+<option>
+Diseño personalizado
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="details">
+Cuéntanos qué quieres
+</label>
 
 <textarea
-id="detalle"
-rows="5"
-placeholder="Cuéntame qué diseño necesitas, colores, texto, estilo, etc."></textarea>
+id="details"
+required
+placeholder="Ej.: Quiero una invitación de cumpleaños..."
+></textarea>
+
+</div>
+
 
 <button
-class="primary"
-onclick="enviarWhatsApp()">
+class="btn primary"
+type="submit"
+>
 💬 Pedir por WhatsApp
 </button>
 
-<p class="note">
-Primero coordinaremos contigo los detalles y el precio final.
+</form>
+
+
+<!-- PAGO -->
+
+<div
+class="payment"
+id="payment"
+>
+
+<h3>
+💜 Pago por Yape
+</h3>
+
+<p>
+Primero coordinaremos tu pedido por WhatsApp.
+Cuando el monto esté confirmado, puedes realizar el pago.
 </p>
 
-</section>
 
+<div class="paybox">
 
-<section class="card hidden" id="pago">
+<div style="font-size:.85rem;color:#6b6475">
+Número para Yape
+</div>
 
-<h2>💜 Pago por Yape</h2>
-
-<div class="yape-box">
-
-<p>Cuando hayas coordinado el precio por WhatsApp:</p>
-
-<p>📱 Yapea al número:</p>
-
-<div class="yape-number">
+<div class="pay-number">
 917 193 098
 </div>
 
-<p>
-Después de realizar el pago, envía tu comprobante por WhatsApp.
+</div>
+
+
+<p class="notice">
+Después de pagar, envía el comprobante por WhatsApp para verificarlo.
+No compartas contraseñas ni códigos de seguridad.
 </p>
 
-</div>
-
-<div class="steps">
-<b>Cómo pedir:</b><br>
-1️⃣ Elige tu diseño.<br>
-2️⃣ Escríbenos por WhatsApp.<br>
-3️⃣ Coordinamos el precio.<br>
-4️⃣ Realiza el pago por Yape.<br>
-5️⃣ Envía el comprobante.<br>
-6️⃣ Recibe tu diseño.
-</div>
 
 <button
-class="yape"
-onclick="confirmarPago()">
+class="btn primary"
+type="button"
+id="paidBtn"
+>
 ✅ Ya hice el pago
 </button>
+
+</div>
+
+</div>
 
 </section>
 
 </main>
 
 
+<footer>
+
+<strong>
+DiseñaYa ✦
+</strong>
+
+<p>
+Diseños personalizados por WhatsApp
+</p>
+
+<small>
+© 2026 DiseñaYa
+</small>
+
+</footer>
+
+
+<div
+class="toast"
+id="toast"
+>
+¡Listo! Abriendo WhatsApp…
+</div>
+
+
 <script>
 
-const WHATSAPP="51917193098";
-
-let servicioElegido="";
-let precioReferencial="";
+const WHATSAPP = "51917193098";
 
 
-function seleccionar(servicio,precio){
+function openWhatsApp(message){
 
-servicioElegido=servicio;
-precioReferencial=precio;
+const url =
+"https://wa.me/" +
+WHATSAPP +
+"?text=" +
+encodeURIComponent(message);
 
-document
-.getElementById("pedido")
-.classList
-.remove("hidden");
+window.open(url,"_blank");
 
-document
-.getElementById("servicio")
-.innerHTML=
-"<b>Servicio elegido:</b> "
-+servicio+
-"<br><b>Precio:</b> "
-+precio;
+}
+
 
 document
-.getElementById("pedido")
-.scrollIntoView({
-behavior:"smooth"
+.getElementById("orderForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+
+const name =
+document.getElementById("name").value.trim();
+
+const service =
+document.getElementById("service").value;
+
+const details =
+document.getElementById("details").value.trim();
+
+
+const message =
+
+`✨ *Nuevo pedido - DiseñaYa*
+
+👤 Nombre: ${name}
+
+🎨 Servicio: ${service}
+
+📝 *Detalles:*
+${details}
+
+Hola, quiero coordinar mi diseño con DiseñaYa.`;
+
+
+document
+.getElementById("payment")
+.classList.add("show");
+
+
+document
+.getElementById("toast")
+.classList.add("show");
+
+
+setTimeout(function(){
+
+document
+.getElementById("toast")
+.classList.remove("show");
+
+},2200);
+
+
+openWhatsApp(message);
+
 });
 
-}
-
-
-function enviarWhatsApp(){
-
-const nombre=
-document
-.getElementById("nombre")
-.value
-.trim() || "Cliente";
-
-const detalle=
-document
-.getElementById("detalle")
-.value
-.trim() || "Quiero coordinar mi diseño.";
-
-
-const mensaje=
-"Hola, DiseñaYa ✨%0A%0A"+
-"Quiero solicitar un diseño.%0A%0A"+
-"Servicio: "+
-encodeURIComponent(servicioElegido)+
-"%0A"+
-"Nombre: "+
-encodeURIComponent(nombre)+
-"%0A"+
-"Mi idea: "+
-encodeURIComponent(detalle)+
-"%0A%0A"+
-"Quisiera coordinar el precio y los detalles.";
-
-
-window.open(
-"https://wa.me/"+WHATSAPP+
-"?text="+mensaje,
-"_blank"
-);
-
 
 document
-.getElementById("pago")
-.classList
-.remove("hidden");
+.getElementById("paidBtn")
+.addEventListener("click",function(){
 
-document
-.getElementById("pago")
-.scrollIntoView({
-behavior:"smooth"
+const name =
+document.getElementById("name").value.trim() ||
+"cliente";
+
+
+const message =
+
+`✅ *Pago realizado - DiseñaYa*
+
+👤 Cliente: ${name}
+
+Hola, ya realicé el pago por Yape. Te envío el comprobante para verificarlo.`;
+
+
+openWhatsApp(message);
+
 });
-
-}
-
-
-function confirmarPago(){
-
-const mensaje=
-"Hola, DiseñaYa ✨%0A%0A"+
-"Ya realicé el pago por Yape de mi pedido. "+
-"Te envío el comprobante por aquí para que puedas verificarlo.";
-
-window.open(
-"https://wa.me/"+WHATSAPP+
-"?text="+mensaje,
-"_blank"
-);
-
-}
 
 </script>
 
