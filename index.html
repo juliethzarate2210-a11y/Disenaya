@@ -4,80 +4,348 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#7b2cbf">
-<title>DiseñaYa — Diseños personalizados</title>
+<title>DiseñaYa - Diseños personalizados</title>
+
 <style>
-*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#faf7ff;color:#24152f}
-header{padding:28px 20px;background:linear-gradient(135deg,#7b2cbf,#c77dff);color:white;text-align:center}
-.logo{font-size:34px;font-weight:800}.tag{opacity:.95;margin-top:5px}
-main{max-width:720px;margin:auto;padding:20px}.card{background:white;border-radius:22px;padding:20px;margin:16px 0;box-shadow:0 8px 25px #00000012}
-h2{margin-top:0}.services{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.service{border:1px solid #eadcf4;border-radius:16px;padding:16px;cursor:pointer;background:#fff}
-.service:hover{border-color:#7b2cbf}.price{font-weight:800;color:#7b2cbf;margin-top:7px}
-input,textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;margin:7px 0;font:inherit}
-button{width:100%;border:0;border-radius:14px;padding:14px;font-size:16px;font-weight:750;cursor:pointer;margin-top:8px}
-.primary{background:#7b2cbf;color:#fff}.green{background:#19b66a;color:#fff}.light{background:#f0e8f6;color:#54216f}
-.hidden{display:none}.qr{display:block;width:min(100%,360px);margin:12px auto;border-radius:12px}
-.note{font-size:14px;color:#66586d;line-height:1.45}.ok{background:#effaf4;padding:13px;border-radius:12px}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#faf7ff;
+  color:#24152f;
+}
+
+header{
+  padding:30px 20px;
+  text-align:center;
+  color:white;
+  background:linear-gradient(135deg,#7b2cbf,#c77dff);
+}
+
+.logo{
+  font-size:34px;
+  font-weight:bold;
+}
+
+.tag{
+  margin-top:8px;
+}
+
+main{
+  max-width:720px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  margin:16px 0;
+  border-radius:20px;
+  box-shadow:0 7px 25px #00000012;
+}
+
+h2{
+  margin-top:0;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.service{
+  padding:18px;
+  border:1px solid #eadcf4;
+  border-radius:16px;
+  background:white;
+  cursor:pointer;
+}
+
+.service:hover{
+  border-color:#7b2cbf;
+}
+
+.price{
+  margin-top:7px;
+  color:#7b2cbf;
+  font-weight:bold;
+}
+
+input,textarea{
+  width:100%;
+  padding:13px;
+  margin:7px 0;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:16px;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  border:0;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.primary{
+  background:#7b2cbf;
+  color:white;
+}
+
+.yape{
+  background:#6f168f;
+  color:white;
+}
+
+.hidden{
+  display:none;
+}
+
+.note{
+  color:#66586d;
+  line-height:1.5;
+}
+
+.yape-box{
+  background:#f6eaff;
+  padding:18px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.yape-number{
+  font-size:25px;
+  font-weight:bold;
+  color:#7b2cbf;
+  margin:10px 0;
+}
+
+.steps{
+  line-height:1.8;
+}
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="logo">✨ DiseñaYa</div>
   <div class="tag">Diseños personalizados hechos para ti</div>
 </header>
 
 <main>
+
 <section class="card">
-<h2>¿Qué necesitas?</h2>
+<h2>🎨 ¿Qué necesitas?</h2>
+
 <div class="services">
-  <div class="service" onclick="selectService('Diseño para redes sociales','S/ 15')"><b>📱 Redes sociales</b><div class="price">Desde S/ 15</div></div>
-  <div class="service" onclick="selectService('Invitación digital','S/ 12')"><b>💌 Invitación digital</b><div class="price">Desde S/ 12</div></div>
-  <div class="service" onclick="selectService('Edición de foto','S/ 10')"><b>🖼️ Edición de foto</b><div class="price">Desde S/ 10</div></div>
-  <div class="service" onclick="selectService('Diseño personalizado','S/ 15')"><b>🎨 Otro diseño</b><div class="price">Desde S/ 15</div></div>
+
+<div class="service"
+onclick="seleccionar('Diseño para redes sociales','Desde S/ 15')">
+<b>📱 Diseño para redes</b>
+<div class="price">Desde S/ 15</div>
+</div>
+
+<div class="service"
+onclick="seleccionar('Invitación digital','Desde S/ 12')">
+<b>💌 Invitación digital</b>
+<div class="price">Desde S/ 12</div>
+</div>
+
+<div class="service"
+onclick="seleccionar('Edición de foto','Desde S/ 10')">
+<b>🖼️ Edición de foto</b>
+<div class="price">Desde S/ 10</div>
+</div>
+
+<div class="service"
+onclick="seleccionar('Diseño personalizado','Desde S/ 15')">
+<b>🎨 Otro diseño</b>
+<div class="price">Desde S/ 15</div>
+</div>
+
 </div>
 </section>
 
+
 <section class="card hidden" id="pedido">
+
 <h2>📝 Cuéntame tu idea</h2>
-<div id="seleccion"></div>
-<input id="nombre" placeholder="Tu nombre">
-<textarea id="detalle" rows="4" placeholder="¿Qué quieres que haga? Cuéntame colores, texto, estilo, tamaño, etc."></textarea>
-<button class="primary" onclick="enviarPedido()">💬 Enviar pedido por WhatsApp</button>
-<p class="note">Primero coordinamos contigo el trabajo y el precio final por WhatsApp.</p>
+
+<p id="servicio"></p>
+
+<input
+id="nombre"
+placeholder="Tu nombre">
+
+<textarea
+id="detalle"
+rows="5"
+placeholder="Cuéntame qué diseño necesitas, colores, texto, estilo, etc."></textarea>
+
+<button
+class="primary"
+onclick="enviarWhatsApp()">
+💬 Pedir por WhatsApp
+</button>
+
+<p class="note">
+Primero coordinaremos contigo los detalles y el precio final.
+</p>
+
 </section>
+
 
 <section class="card hidden" id="pago">
-<h2>💜 Paga por Yape</h2>
-<p>Cuando ya hayas coordinado el precio por WhatsApp, escanea este QR desde Yape e ingresa el monto acordado.</p>
-<img class="qr" src="yape-qr.png" alt="QR de Yape">
-<div class="ok"><b>Después del pago:</b><br>envía el comprobante por WhatsApp para que pueda verificarlo y comenzar tu pedido.</div>
-<button class="green" onclick="confirmarPago()">✅ Ya hice el pago — enviar comprobante por WhatsApp</button>
-<p class="note">La app no marca automáticamente un pago como recibido. El pago debe verificarse en Yape.</p>
+
+<h2>💜 Pago por Yape</h2>
+
+<div class="yape-box">
+
+<p>Cuando hayas coordinado el precio por WhatsApp:</p>
+
+<p>📱 Yapea al número:</p>
+
+<div class="yape-number">
+917 193 098
+</div>
+
+<p>
+Después de realizar el pago, envía tu comprobante por WhatsApp.
+</p>
+
+</div>
+
+<div class="steps">
+<b>Cómo pedir:</b><br>
+1️⃣ Elige tu diseño.<br>
+2️⃣ Escríbenos por WhatsApp.<br>
+3️⃣ Coordinamos el precio.<br>
+4️⃣ Realiza el pago por Yape.<br>
+5️⃣ Envía el comprobante.<br>
+6️⃣ Recibe tu diseño.
+</div>
+
+<button
+class="yape"
+onclick="confirmarPago()">
+✅ Ya hice el pago
+</button>
+
 </section>
+
 </main>
 
-<script>
-const WHATSAPP='51917193098';
-let servicio='',precio='';
 
-function selectService(s,p){
-  servicio=s; precio=p;
-  document.getElementById('pedido').classList.remove('hidden');
-  document.getElementById('seleccion').innerHTML='<p><b>Servicio:</b> '+s+'<br><b>Precio referencial:</b> '+p+'</p>';
-  document.getElementById('pedido').scrollIntoView({behavior:'smooth'});
+<script>
+
+const WHATSAPP="51917193098";
+
+let servicioElegido="";
+let precioReferencial="";
+
+
+function seleccionar(servicio,precio){
+
+servicioElegido=servicio;
+precioReferencial=precio;
+
+document
+.getElementById("pedido")
+.classList
+.remove("hidden");
+
+document
+.getElementById("servicio")
+.innerHTML=
+"<b>Servicio elegido:</b> "
++servicio+
+"<br><b>Precio:</b> "
++precio;
+
+document
+.getElementById("pedido")
+.scrollIntoView({
+behavior:"smooth"
+});
+
 }
-function enviarPedido(){
-  const nombre=document.getElementById('nombre').value.trim() || 'Cliente';
-  const detalle=document.getElementById('detalle').value.trim() || 'Quiero coordinar los detalles del diseño.';
-  const text=`Hola, DiseñaYa ✨%0A%0AQuiero solicitar un trabajo.%0A%0A*Servicio:* ${encodeURIComponent(servicio)}%0A*Nombre:* ${encodeURIComponent(nombre)}%0A*Idea:* ${encodeURIComponent(detalle)}%0A%0AQuisiera saber el precio final y coordinar el pedido.`;
-  window.open(`https://wa.me/${WHATSAPP}?text=${text}`,'_blank');
-  document.getElementById('pago').classList.remove('hidden');
-  document.getElementById('pago').scrollIntoView({behavior:'smooth'});
+
+
+function enviarWhatsApp(){
+
+const nombre=
+document
+.getElementById("nombre")
+.value
+.trim() || "Cliente";
+
+const detalle=
+document
+.getElementById("detalle")
+.value
+.trim() || "Quiero coordinar mi diseño.";
+
+
+const mensaje=
+"Hola, DiseñaYa ✨%0A%0A"+
+"Quiero solicitar un diseño.%0A%0A"+
+"Servicio: "+
+encodeURIComponent(servicioElegido)+
+"%0A"+
+"Nombre: "+
+encodeURIComponent(nombre)+
+"%0A"+
+"Mi idea: "+
+encodeURIComponent(detalle)+
+"%0A%0A"+
+"Quisiera coordinar el precio y los detalles.";
+
+
+window.open(
+"https://wa.me/"+WHATSAPP+
+"?text="+mensaje,
+"_blank"
+);
+
+
+document
+.getElementById("pago")
+.classList
+.remove("hidden");
+
+document
+.getElementById("pago")
+.scrollIntoView({
+behavior:"smooth"
+});
+
 }
+
+
 function confirmarPago(){
-  const text=`Hola, DiseñaYa ✨%0A%0AYa realicé el pago por Yape de mi pedido de ${encodeURIComponent(servicio)}. Te envío el comprobante por aquí para que puedas verificarlo.`;
-  window.open(`https://wa.me/${WHATSAPP}?text=${text}`,'_blank');
+
+const mensaje=
+"Hola, DiseñaYa ✨%0A%0A"+
+"Ya realicé el pago por Yape de mi pedido. "+
+"Te envío el comprobante por aquí para que puedas verificarlo.";
+
+window.open(
+"https://wa.me/"+WHATSAPP+
+"?text="+mensaje,
+"_blank"
+);
+
 }
+
 </script>
+
 </body>
 </html>
